@@ -28,7 +28,7 @@ public class Main {
                 for (ConsumerRecord<String, String> record : records) {
                     String recordString = "key=" + record.key() + ", value=" + record.value() + ", topic=" + record.topic() + ", partition=" + record.partition() + ", offset=" + record.offset();
                     System.out.println(recordString);
-                    writer.write(recordString);
+                    writer.write(recordString + "\n");
                 }
                 consumer.commitSync();
                 writer.flush();
